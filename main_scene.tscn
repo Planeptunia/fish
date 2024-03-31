@@ -1,0 +1,135 @@
+[gd_scene load_steps=3 format=3 uid="uid://cihk1myiwivd"]
+
+[ext_resource type="Script" path="res://main_scene.gd" id="1_ijawh"]
+[ext_resource type="Texture2D" uid="uid://bo1gipftlyn1k" path="res://Sprite-0001.png" id="2_i5xxy"]
+
+[node name="main_scene" type="Node2D"]
+script = ExtResource("1_ijawh")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 3.0
+offset_right = 1919.0
+offset_bottom = 1081.0
+grow_horizontal = 2
+
+[node name="fish_click" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -234.5
+offset_top = -190.0
+offset_right = 234.5
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_i5xxy")
+stretch_mode = 5
+
+[node name="Control2" type="Control" parent="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 713.0
+offset_top = 284.0
+offset_right = 753.0
+offset_bottom = 324.0
+
+[node name="text" type="Label" parent="Control/Control2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_top = -226.0
+offset_right = 489.0
+offset_bottom = -17.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 100
+text = "Чешуйки:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="money" type="Label" parent="Control/Control2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.0
+offset_top = -48.0
+offset_right = 483.0
+offset_bottom = 89.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+
+[node name="scroll_container" type="ScrollContainer" parent="Control"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 6.0
+offset_top = -539.0
+offset_right = 649.0
+offset_bottom = 602.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(-1, 1)
+scroll_vertical_custom_step = 10.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="Control" type="VBoxContainer" parent="Control/scroll_container"]
+custom_minimum_size = Vector2(635, 1687)
+layout_mode = 2
+
+[node name="Mech_arm" type="Button" parent="Control/scroll_container/Control"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="fisherman" type="Button" parent="Control/scroll_container/Control"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="Lakes" type="Button" parent="Control/scroll_container/Control"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="Fish_sellers" type="Button" parent="Control/scroll_container/Control"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="Bank" type="Button" parent="Control/scroll_container/Control"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="a small part of the sea" type="Button" parent="Control/scroll_container/Control"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="Temple" type="Button" parent="Control/scroll_container/Control"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="Laboratory" type="Button" parent="Control/scroll_container/Control"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="Spaceship" type="Button" parent="Control/scroll_container/Control"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="Mage towers" type="Button" parent="Control/scroll_container/Control"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[connection signal="pressed" from="Control/fish_click" to="." method="_on_fish_click_pressed"]
