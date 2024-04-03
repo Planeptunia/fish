@@ -133,7 +133,7 @@ custom_minimum_size = Vector2(0, 110)
 layout_mode = 2
 
 [connection signal="pressed" from="Control/fish_click" to="." method="_on_fish_click_pressed"]
-[connection signal="pressed" from="Control/scroll_container/Control/Mech_arm" to="." method="_on_mech_arm_pressed"]
+[connection signal="pressed" from="Control/scroll_container/Control/Mech_arm" to="." method="_when_pressed"]
 [connection signal="pressed" from="Control/scroll_container/Control/fisherman" to="." method="_on_fisherman_pressed"]
 [connection signal="pressed" from="Control/scroll_container/Control/Lakes" to="." method="_on_lakes_pressed"]
 [connection signal="pressed" from="Control/scroll_container/Control/Fish_sellers" to="." method="_on_fish_sellers_pressed"]

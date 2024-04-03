@@ -40,6 +40,9 @@ func _process(delta):
 	pass
 
 class towers:
+	var multiplier = 1.10
+	var n = 1
+	var money_per_second
 	func _init_(price, mnp):
 		self.price = price
 		self.mnp = mnp
@@ -47,46 +50,21 @@ class towers:
 		self.price = self.price * multiplier ** (n + 1)
 		money_per_second += self.mnp 
 		self.mnp = self.mnp * multiplier ** (n + 1)
+
+var ls = [0, 1, 44, 5, 6]
+var prices = [100, 200, 300, 400, 500]
+var mps = [1, 2, 3, 4, 5]
+var monps = 0
+func _when_pressed(upgrade):
+	for i in ls:
+		if money < prices[i]:
+			pass
+		n = ls[i]
+		prices[i] = prices[i] * multiplier ** (n + 1)
+		monps += mps[i] * n
+
+
 func _on_fish_click_pressed():
 	money += click * multiplier
 	get_node("Control/Control2/money").text = str(money)
 
-
-func _on_mech_arm_pressed():
-	price1 = price1 * multiplier ** (n + 1)
-	money_per_second += mnp 
-
-func _on_fisherman_pressed():
-	price2 = price2 * multiplier ** (n + 1)
-
-
-func _on_lakes_pressed():
-	price3 = price3 * multiplier ** (n + 1)
-
-
-func _on_fish_sellers_pressed():
-	price4 = price4 * multiplier ** (n + 1)
-
-
-func _on_bank_pressed():
-	price5 = price5 * multiplier ** (n + 1)
-
-
-func _on_a_small_part_of_the_sea_pressed():
-	price6 = price6 * multiplier ** (n + 1)
-
-
-func _on_temple_pressed():
-	price7 = price7 * multiplier ** (n + 1)
-
-
-func _on_laboratory_pressed():
-	price8 = price8 * multiplier ** (n + 1)
-
-
-func _on_spaceship_pressed():
-	price9 = price9 * multiplier ** (n + 1)
-
-
-func _on_mage_towers_pressed():
-	price10 = price10 * multiplier ** (n + 1)
