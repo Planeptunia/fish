@@ -77,69 +77,30 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 1.0
+offset_left = -648.0
 offset_top = -543.0
-offset_right = 644.0
+offset_right = -5.0
 offset_bottom = 590.0
 grow_horizontal = 0
 grow_vertical = 2
-scale = Vector2(-1, 1)
 scroll_vertical_custom_step = 10.0
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 
 [node name="Control" type="VBoxContainer" parent="Control/scroll_container"]
-custom_minimum_size = Vector2(635, 1232)
+custom_minimum_size = Vector2(635, 0)
 layout_mode = 2
 
-[node name="Mech_arm" type="Button" parent="Control/scroll_container/Control"]
-custom_minimum_size = Vector2(0, 110)
+[node name="TabContainer" type="TabContainer" parent="Control"]
+layout_mode = 0
+offset_right = 565.0
+offset_bottom = 1083.0
+theme_override_font_sizes/font_size = 30
+
+[node name="Settings" type="ScrollContainer" parent="Control/TabContainer"]
 layout_mode = 2
 
-[node name="fisherman" type="Button" parent="Control/scroll_container/Control"]
-custom_minimum_size = Vector2(0, 110)
-layout_mode = 2
-
-[node name="Lakes" type="Button" parent="Control/scroll_container/Control"]
-custom_minimum_size = Vector2(0, 110)
-layout_mode = 2
-
-[node name="Fish_sellers" type="Button" parent="Control/scroll_container/Control"]
-custom_minimum_size = Vector2(0, 110)
-layout_mode = 2
-
-[node name="Bank" type="Button" parent="Control/scroll_container/Control"]
-custom_minimum_size = Vector2(0, 110)
-layout_mode = 2
-
-[node name="a small part of the sea" type="Button" parent="Control/scroll_container/Control"]
-custom_minimum_size = Vector2(0, 110)
-layout_mode = 2
-
-[node name="Temple" type="Button" parent="Control/scroll_container/Control"]
-custom_minimum_size = Vector2(0, 110)
-layout_mode = 2
-
-[node name="Laboratory" type="Button" parent="Control/scroll_container/Control"]
-custom_minimum_size = Vector2(0, 110)
-layout_mode = 2
-
-[node name="Spaceship" type="Button" parent="Control/scroll_container/Control"]
-custom_minimum_size = Vector2(0, 110)
-layout_mode = 2
-
-[node name="Mage towers" type="Button" parent="Control/scroll_container/Control"]
-custom_minimum_size = Vector2(0, 110)
+[node name="Settings" type="VBoxContainer" parent="Control/TabContainer/Settings"]
 layout_mode = 2
 
 [connection signal="pressed" from="Control/fish_click" to="." method="_on_fish_click_pressed"]
-[connection signal="pressed" from="Control/scroll_container/Control/Mech_arm" to="." method="_when_pressed"]
-[connection signal="pressed" from="Control/scroll_container/Control/fisherman" to="." method="_on_fisherman_pressed"]
-[connection signal="pressed" from="Control/scroll_container/Control/Lakes" to="." method="_on_lakes_pressed"]
-[connection signal="pressed" from="Control/scroll_container/Control/Fish_sellers" to="." method="_on_fish_sellers_pressed"]
-[connection signal="pressed" from="Control/scroll_container/Control/Bank" to="." method="_on_bank_pressed"]
-[connection signal="pressed" from="Control/scroll_container/Control/a small part of the sea" to="." method="_on_a_small_part_of_the_sea_pressed"]
-[connection signal="pressed" from="Control/scroll_container/Control/Temple" to="." method="_on_temple_pressed"]
-[connection signal="pressed" from="Control/scroll_container/Control/Laboratory" to="." method="_on_laboratory_pressed"]
-[connection signal="pressed" from="Control/scroll_container/Control/Spaceship" to="." method="_on_spaceship_pressed"]
-[connection signal="pressed" from="Control/scroll_container/Control/Mage towers" to="." method="_on_mage_towers_pressed"]

@@ -1,0 +1,11 @@
+{
+	"upgrades": {
+		"mech_arm": {
+			"name": "Mech Arm",
+			"icon": "res://Sprite-0001.png",
+			"price": 15,
+			"description": "seledka",
+			"mps": 0.1
+		}
+	}
+}
