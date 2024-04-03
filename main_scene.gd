@@ -6,17 +6,18 @@ var upgradeButton = preload("res://upgrade_button.tscn")
 var upgrades
 var upgradesList = {}
 
+var options
 func _init():
 	pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
+	var json = JSON.new()
 	update_money()
-	
+
 	upgrades = FileAccess.open("res://upgrades.json", FileAccess.READ)
 	upgrades = upgrades.get_as_text()
-	var json = JSON.new()
 	upgrades = json.parse_string(upgrades)
 	for upgrade in upgrades['upgrades'].keys():
 		var newUpgrade = upgradeButton.instantiate()
@@ -62,3 +63,20 @@ func _on_fish_click_pressed():
 	
 func update_money():
 	$Control/Control2/money.text = str(snappedf(money, 1))
+
+func _on_options_b_pressed():
+	$Control/TabContainer.set_current_tab(1)
+
+func _on_info_b_pressed():
+	$Control/TabContainer.set_current_tab(0)
+	
+func _on_stats_b_pressed():
+	$Control/TabContainer.set_current_tab(2)
+
+
+func _on_music_volume_value_changed(value):
+	$Control/TabContainer/Settings/Music_percent.text = str(value) + "%"
+
+
+func _on_sfx_volume_value_changed(value):
+	$Control/TabContainer/Settings/SFX_percent.text = str(value) + "%"
