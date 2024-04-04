@@ -9,13 +9,11 @@ script = ExtResource("1_550oq")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
 offset_top = 3.0
 offset_right = 1919.0
 offset_bottom = 1081.0
 grow_horizontal = 2
+size_flags_horizontal = 4
 
 [node name="fish_click" type="TextureButton" parent="Control"]
 layout_mode = 1
@@ -30,6 +28,7 @@ offset_right = 234.5
 offset_bottom = 190.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(234.5, 190)
 texture_normal = ExtResource("2_askvq")
 stretch_mode = 5
 
@@ -203,6 +202,7 @@ theme_override_font_sizes/font_size = 36
 text = "Save Data"
 
 [node name="wipe_data_button" type="Button" parent="Control/TabContainer/Settings"]
+layout_mode = 0
 offset_left = 30.0
 offset_top = 314.0
 offset_right = 299.0

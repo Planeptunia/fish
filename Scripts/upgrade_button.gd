@@ -7,6 +7,7 @@ var itemIcon = preload("res://Sprites/Sprite-0001.png")
 var baseCost = 1
 var price_multiplier = 1.13
 var mps_multiplier = 1
+var click_increase = 0
 var price = 0
 var amount = 0
 

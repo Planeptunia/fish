@@ -15,8 +15,8 @@
 		}
 	},
 	"settings": {
-		"music_volume": 30,
+		"music_volume": 38,
 		"sfx_volume": 76,
-		"short_numbers": true
+		"short_numbers": false
 	}
 }

@@ -42,11 +42,27 @@ func _physics_process(delta):
 	update_money()
 
 func _on_fish_click_pressed():
-	money += 1
+	var click_increase = 0
+	for upgrade in upgradesList:
+		click_increase += upgradesList[upgrade].click_increase
+	money += 1 + click_increase
+	var random_rotation = randi_range(-15, 15)
+	$Control/fish_click.rotation = 0
+	$Control/fish_click.rotation = random_rotation
 	update_money()
 	
 func update_money():
-	$Control/Control2/money.text = str(snappedf(money, 1))
+	var sign
+	if options["short_numbers"]:
+		var shown_money
+		if (money / 1000) < 1000 and (money / 1000) > 0:
+			sign = "k"
+			shown_money = money / 1000
+		elif (money / 1000000) < 1000 and (money / 1000) > 0:
+			sign = "m"
+			shown_money = money / 1000000
+		$Control/Control2/money.text = str(snappedf(shown_money, 0.01)) + " " + sign
+	else: $Control/Control2/money.text = str(snappedf(money, 1))
 
 func _on_options_b_pressed():
 	$Control/TabContainer.set_current_tab(1)
@@ -75,11 +91,11 @@ func load_upgrades():
 		upgradesList[upgrade] = newUpgrade
 		upgradesList[upgrade].id = upgrade
 		if 'price_multiplier' in upgrades['upgrades'][upgrade].keys():
-			print(upgrades['upgrades'][upgrade].keys())
 			upgradesList[upgrade].price_multiplier = upgrades['upgrades'][upgrade]['price_multiplier']
 		if 'mps_multiplier' in upgrades['upgrades'][upgrade].keys():
-			print(upgrades['upgrades'][upgrade].keys())
 			upgradesList[upgrade].mps_multiplier = upgrades['upgrades'][upgrade]['mps_multiplier']
+		if 'click_increase' in upgrades['upgrades'][upgrade].keys():
+			upgradesList[upgrade].click_increase = upgrades['upgrades'][upgrade]['click_increase']
 		upgradesList[upgrade].baseCost = upgrades['upgrades'][upgrade]['price']
 		upgradesList[upgrade].change_icon(upgrades['upgrades'][upgrade]['icon'])
 		upgradesList[upgrade].change_price(upgrades['upgrades'][upgrade]['price'])
