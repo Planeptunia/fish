@@ -2,70 +2,70 @@
 	"upgrades": {
 		"mech_arm": {
 			"name": "Mech Arm",
-			"icon": "res://Sprite-0001.png",
+			"icon": "res://Sprites/Sprite-0001.png",
 			"price": 15,
 			"description": "seledka",
 			"mps": 0.1
 		},
 		"fisherman": {
 			"name": "Fisherman",
-			"icon": "res://Sprite-0001.png",
+			"icon": "res://Sprites/Sprite-0001.png",
 			"price": 15,
 			"description": "seledka",
 			"mps": 0.1
 		},
 		"lake": {
 			"name": "Lake",
-			"icon": "res://Sprite-0001.png",
+			"icon": "res://Sprites/Sprite-0001.png",
 			"price": 15,
 			"description": "seledka",
 			"mps": 0.1
 		},
 		"fish_sellers": {
 			"name": "Fish Seller",
-			"icon": "res://Sprite-0001.png",
+			"icon": "res://Sprites/Sprite-0001.png",
 			"price": 15,
 			"description": "seledka",
 			"mps": 0.1
 		},
 		"parts_of_the_sea": {
 			"name": "Part Of The Sea",
-			"icon": "res://Sprite-0001.png",
+			"icon": "res://Sprites/Sprite-0001.png",
 			"price": 15,
 			"description": "seledka",
 			"mps": 0.1
 		},
 		"bank": {
 			"name": "Bank",
-			"icon": "res://Sprite-0001.png",
+			"icon": "res://Sprites/Sprite-0001.png",
 			"price": 15,
 			"description": "seledka",
 			"mps": 0.1
 		},
 		"temple": {
 			"name": "Temple",
-			"icon": "res://Sprite-0001.png",
+			"icon": "res://Sprites/Sprite-0001.png",
 			"price": 15,
 			"description": "seledka",
 			"mps": 0.1
 		},
 		"laboratory": {
 			"name": "Laboratory",
-			"icon": "res://Sprite-0001.png",
+			"icon": "res://Sprites/Sprite-0001.png",
 			"price": 15,
 			"description": "seledka",
 			"mps": 0.1
 		},
 		"rocket": {
 			"name": "Rocket",
-			"icon": "res://Sprite-0001.png",
+			"icon": "res://Sprites/Sprite-0001.png",
 			"price": 15,
 			"description": "seledka",
 			"mps": 0.1
 		},
 		"mage_tower": {
 			"name": "Mage Tower",
-			"icon": "res://Sprite-0001.png",
+			"icon": "res://Sprites/Sprite-0001.png",
 			"price": 15,
 			"description": "seledka",
 			"mps": 0.1

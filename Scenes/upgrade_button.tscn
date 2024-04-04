@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bv55un5stal1t"]
 
-[ext_resource type="Texture2D" uid="uid://bo1gipftlyn1k" path="res://Sprite-0001.png" id="1_ijhj4"]
-[ext_resource type="Script" path="res://upgrade_button.gd" id="1_tbvy1"]
+[ext_resource type="Script" path="res://Scripts/upgrade_button.gd" id="1_5km5h"]
+[ext_resource type="Texture2D" uid="uid://bo1gipftlyn1k" path="res://Sprites/Sprite-0001.png" id="2_1pgvo"]
 
 [node name="upgrade_button" type="Button"]
 custom_minimum_size = Vector2(0, 110)
@@ -12,12 +12,12 @@ offset_right = -1285.0
 offset_bottom = -970.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tbvy1")
+script = ExtResource("1_5km5h")
 
 [node name="itemIcon" type="Sprite2D" parent="."]
 position = Vector2(76, 54)
 scale = Vector2(4, 4)
-texture = ExtResource("1_ijhj4")
+texture = ExtResource("2_1pgvo")
 
 [node name="name" type="Label" parent="."]
 layout_mode = 0

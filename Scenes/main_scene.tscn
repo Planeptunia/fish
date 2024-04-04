@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cihk1myiwivd"]
+[gd_scene load_steps=4 format=3 uid="uid://cihk1myiwivd"]
 
-[ext_resource type="Script" path="res://main_scene.gd" id="1_ijawh"]
-[ext_resource type="Texture2D" uid="uid://bo1gipftlyn1k" path="res://Sprite-0001.png" id="2_i5xxy"]
+[ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_550oq"]
+[ext_resource type="Texture2D" uid="uid://bo1gipftlyn1k" path="res://Sprites/Sprite-0001.png" id="2_askvq"]
+[ext_resource type="Texture2D" uid="uid://no2au208aubf" path="res://icon.svg" id="3_magtn"]
 
 [node name="main_scene" type="Node2D"]
-script = ExtResource("1_ijawh")
+script = ExtResource("1_550oq")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -29,7 +30,7 @@ offset_right = 234.5
 offset_bottom = 190.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("2_i5xxy")
+texture_normal = ExtResource("2_askvq")
 stretch_mode = 5
 
 [node name="Control2" type="Control" parent="Control"]
@@ -97,19 +98,20 @@ offset_top = 218.0
 offset_right = 565.0
 offset_bottom = 1083.0
 theme_override_font_sizes/font_size = 30
+current_tab = 1
 tabs_visible = false
 
 [node name="info" type="ScrollContainer" parent="Control/TabContainer"]
+visible = false
 layout_mode = 2
 
 [node name="info" type="VBoxContainer" parent="Control/TabContainer/info"]
 layout_mode = 2
 
 [node name="Settings" type="Control" parent="Control/TabContainer"]
-visible = false
 layout_mode = 2
 
-[node name="Music_volume" type="HScrollBar" parent="Control/TabContainer/Settings"]
+[node name="mus_volume" type="HScrollBar" parent="Control/TabContainer/Settings"]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 48.0
@@ -118,7 +120,7 @@ offset_bottom = 72.0
 value = 50.0
 rounded = true
 
-[node name="SFX_volume" type="HScrollBar" parent="Control/TabContainer/Settings"]
+[node name="sfx_volume" type="HScrollBar" parent="Control/TabContainer/Settings"]
 layout_mode = 0
 offset_left = 295.0
 offset_top = 48.0
@@ -127,7 +129,7 @@ offset_bottom = 72.0
 value = 50.0
 rounded = true
 
-[node name="sfx_volume_text" type="Label" parent="Control/TabContainer/Settings"]
+[node name="music_volume_label" type="Label" parent="Control/TabContainer/Settings"]
 layout_mode = 0
 offset_left = 34.0
 offset_right = 264.0
@@ -137,7 +139,7 @@ text = "Music Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ms_volume_text" type="Label" parent="Control/TabContainer/Settings"]
+[node name="sfx_volume_label" type="Label" parent="Control/TabContainer/Settings"]
 layout_mode = 0
 offset_left = 298.0
 offset_right = 526.0
@@ -147,7 +149,7 @@ text = "SFX Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Music_percent" type="Label" parent="Control/TabContainer/Settings"]
+[node name="music_percent" type="Label" parent="Control/TabContainer/Settings"]
 layout_mode = 0
 offset_left = 66.0
 offset_top = 73.0
@@ -158,7 +160,7 @@ text = "50%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SFX_percent" type="Label" parent="Control/TabContainer/Settings"]
+[node name="sfx_percent" type="Label" parent="Control/TabContainer/Settings"]
 layout_mode = 0
 offset_left = 334.0
 offset_top = 77.0
@@ -169,7 +171,7 @@ text = "50%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CheckButton" type="CheckButton" parent="Control/TabContainer/Settings"]
+[node name="short_num_toggle" type="CheckButton" parent="Control/TabContainer/Settings"]
 layout_mode = 0
 offset_left = 258.0
 offset_top = 129.0
@@ -182,7 +184,7 @@ action_mode = 0
 alignment = 2
 expand_icon = true
 
-[node name="Short_number_text" type="Label" parent="Control/TabContainer/Settings"]
+[node name="short_num_label" type="Label" parent="Control/TabContainer/Settings"]
 layout_mode = 0
 offset_left = 33.0
 offset_top = 128.0
@@ -190,6 +192,23 @@ offset_right = 256.0
 offset_bottom = 170.0
 theme_override_font_sizes/font_size = 30
 text = "Short Numbers"
+
+[node name="save_data_button" type="Button" parent="Control/TabContainer/Settings"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 214.0
+offset_right = 299.0
+offset_bottom = 272.0
+theme_override_font_sizes/font_size = 36
+text = "Save Data"
+
+[node name="wipe_data_button" type="Button" parent="Control/TabContainer/Settings"]
+offset_left = 30.0
+offset_top = 314.0
+offset_right = 299.0
+offset_bottom = 372.0
+theme_override_font_sizes/font_size = 36
+text = "Wipe Data"
 
 [node name="stats" type="ScrollContainer" parent="Control/TabContainer"]
 visible = false
@@ -222,9 +241,21 @@ offset_right = 528.0
 offset_bottom = 199.0
 text = "statistic"
 
+[node name="save_icon" type="Sprite2D" parent="Control"]
+visible = false
+position = Vector2(113, 961)
+texture = ExtResource("3_magtn")
+
+[node name="save_icon_timer" type="Timer" parent="Control/save_icon"]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="pressed" from="Control/fish_click" to="." method="_on_fish_click_pressed"]
-[connection signal="value_changed" from="Control/TabContainer/Settings/Music_volume" to="." method="_on_music_volume_value_changed"]
-[connection signal="value_changed" from="Control/TabContainer/Settings/SFX_volume" to="." method="_on_sfx_volume_value_changed"]
+[connection signal="value_changed" from="Control/TabContainer/Settings/mus_volume" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="Control/TabContainer/Settings/sfx_volume" to="." method="_on_sfx_volume_value_changed"]
+[connection signal="pressed" from="Control/TabContainer/Settings/save_data_button" to="." method="write_to_save"]
+[connection signal="pressed" from="Control/TabContainer/Settings/wipe_data_button" to="." method="wipe_save"]
 [connection signal="pressed" from="Control/optionsB" to="." method="_on_options_b_pressed"]
 [connection signal="pressed" from="Control/infoB" to="." method="_on_info_b_pressed"]
 [connection signal="pressed" from="Control/statsB" to="." method="_on_stats_b_pressed"]
+[connection signal="timeout" from="Control/save_icon/save_icon_timer" to="." method="disable_save_icon"]

@@ -3,7 +3,7 @@ signal clicked(id)
 
 var id
 
-var itemIcon = preload("res://Sprite-0001.png")
+var itemIcon = preload("res://Sprites/Sprite-0001.png")
 var baseCost = 1
 var price_multiplier = 1.13
 var mps_multiplier = 1
