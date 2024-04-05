@@ -1,22 +1,23 @@
 {
 	"savedata": {
-		"money": 0,
-		"upgrades": {
+		"buildings": {
 			"bank": 0,
 			"fish_sellers": 0,
 			"fisherman": 0,
 			"laboratory": 0,
 			"lake": 0,
 			"mage_tower": 0,
-			"mech_arm": 0,
+			"mech_arm": 4,
 			"parts_of_the_sea": 0,
 			"rocket": 0,
 			"temple": 0
-		}
+		},
+		"money": 9.67833333333393
 	},
 	"settings": {
 		"music_volume": 38,
+		"save_on_exit": true,
 		"sfx_volume": 76,
-		"short_numbers": false
+		"short_numbers": true
 	}
 }

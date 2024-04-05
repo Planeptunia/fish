@@ -1,19 +1,116 @@
-[gd_scene load_steps=4 format=3 uid="uid://cihk1myiwivd"]
+[gd_scene load_steps=25 format=3 uid="uid://cihk1myiwivd"]
 
 [ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_550oq"]
 [ext_resource type="Texture2D" uid="uid://bo1gipftlyn1k" path="res://Sprites/Sprite-0001.png" id="2_askvq"]
-[ext_resource type="Texture2D" uid="uid://no2au208aubf" path="res://icon.svg" id="3_magtn"]
+[ext_resource type="Texture2D" uid="uid://by72in0b417ic" path="res://Sprites/Sprite-discett.png" id="3_bg7hr"]
+[ext_resource type="Texture2D" uid="uid://bnbalthj2v8r4" path="res://Sprites/animations/Sprite-discett-animatioc2.png" id="4_6eci5"]
+[ext_resource type="Texture2D" uid="uid://bhi2slkgedd6j" path="res://Sprites/animations/Sprite-discett-animatioc3.png" id="5_cy0cn"]
+[ext_resource type="Texture2D" uid="uid://7ep1w7us4ro5" path="res://Sprites/animations/Sprite-discett-animatioc4.png" id="6_bv1qq"]
+[ext_resource type="Texture2D" uid="uid://e5h3ldja73fl" path="res://Sprites/animations/Sprite-discett-animatioc5.png" id="7_65wan"]
+[ext_resource type="Texture2D" uid="uid://b0ftkom4jsybr" path="res://Sprites/animations/Sprite-discett-animatioc6.png" id="8_c1a7b"]
+[ext_resource type="Texture2D" uid="uid://daebaj4q6wofp" path="res://Sprites/animations/Sprite-discett-animatioc7.png" id="9_jq1vq"]
+[ext_resource type="Texture2D" uid="uid://pc7r3785qp1c" path="res://Sprites/animations/Sprite-discett-animatioc8.png" id="10_4sh54"]
+[ext_resource type="Texture2D" uid="uid://ca2rdn1y2twq2" path="res://Sprites/animations/Sprite-discett-animatioc9.png" id="11_x6o25"]
+[ext_resource type="Texture2D" uid="uid://ubdgs7ddviwf" path="res://Sprites/animations/Sprite-discett-animatioc10.png" id="12_73fde"]
+[ext_resource type="Texture2D" uid="uid://cf7bd0wu5yjuy" path="res://Sprites/animations/Sprite-discett-animatioc11.png" id="13_godr1"]
+[ext_resource type="Texture2D" uid="uid://vei6vljkwoap" path="res://Sprites/animations/Sprite-discett-animatioc12.png" id="14_x30i8"]
+[ext_resource type="Texture2D" uid="uid://ccamkq4fr5153" path="res://Sprites/animations/Sprite-discett-animatioc13.png" id="15_14ge8"]
+[ext_resource type="Texture2D" uid="uid://b35nucbryt66" path="res://Sprites/animations/Sprite-discett-animatioc14.png" id="16_3svau"]
+[ext_resource type="Texture2D" uid="uid://dknax8c2qsguq" path="res://Sprites/animations/Sprite-discett-animatioc15.png" id="17_4m508"]
+[ext_resource type="Texture2D" uid="uid://dbedy2ou86lh8" path="res://Sprites/animations/Sprite-discett-animatioc16.png" id="18_r0bao"]
+[ext_resource type="Texture2D" uid="uid://do3ppcrkeds4v" path="res://Sprites/animations/Sprite-discett-animatioc17.png" id="19_b2mu1"]
+[ext_resource type="Texture2D" uid="uid://csw4x1nmsmeqs" path="res://Sprites/animations/Sprite-discett-animatioc18.png" id="20_hb61g"]
+[ext_resource type="Texture2D" uid="uid://gol14ogwgeh5" path="res://Sprites/animations/Sprite-discett-animatioc19.png" id="21_1223j"]
+[ext_resource type="Texture2D" uid="uid://2o63a7s4gy77" path="res://Sprites/animations/Sprite-discett-animatioc20.png" id="22_wmf2y"]
+[ext_resource type="Texture2D" uid="uid://heuelm1c8fx2" path="res://Sprites/animations/Sprite-discett-animatioc21.png" id="23_k3ioo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yhdb0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bg7hr")
+}],
+"loop": true,
+"name": &"discett_save_png",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6eci5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cy0cn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bv1qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_65wan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c1a7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jq1vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4sh54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_x6o25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_73fde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_godr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_x30i8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_14ge8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3svau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_4m508")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_r0bao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_b2mu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hb61g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1223j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_wmf2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_k3ioo")
+}],
+"loop": true,
+"name": &"discett_wipe_animation",
+"speed": 10.0
+}]
 
 [node name="main_scene" type="Node2D"]
 script = ExtResource("1_550oq")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
+anchors_preset = 0
 offset_top = 3.0
 offset_right = 1919.0
 offset_bottom = 1081.0
-grow_horizontal = 2
 size_flags_horizontal = 4
+metadata/_edit_lock_ = true
 
 [node name="fish_click" type="TextureButton" parent="Control"]
 layout_mode = 1
@@ -69,48 +166,51 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
 
-[node name="scroll_container" type="ScrollContainer" parent="Control"]
+[node name="tabs_for_buildings_upgrades" type="TabContainer" parent="Control"]
+layout_mode = 0
+offset_left = 1275.0
+offset_top = 228.0
+offset_right = 1918.0
+offset_bottom = 1078.0
+tabs_visible = false
+
+[node name="scroll_container" type="ScrollContainer" parent="Control/tabs_for_buildings_upgrades"]
 clip_contents = false
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -648.0
-offset_top = -538.0
-offset_right = -5.0
-offset_bottom = 595.0
-grow_horizontal = 0
-grow_vertical = 2
+layout_mode = 2
 scroll_vertical_custom_step = 10.0
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="Control" type="VBoxContainer" parent="Control/scroll_container"]
+[node name="Control" type="VBoxContainer" parent="Control/tabs_for_buildings_upgrades/scroll_container"]
 custom_minimum_size = Vector2(635, 0)
 layout_mode = 2
 
-[node name="TabContainer" type="TabContainer" parent="Control"]
+[node name="grid_upgrades" type="GridContainer" parent="Control/tabs_for_buildings_upgrades"]
+visible = false
+layout_mode = 2
+
+[node name="tabs_for_option_stats_info" type="TabContainer" parent="Control"]
 layout_mode = 0
 offset_top = 218.0
 offset_right = 565.0
 offset_bottom = 1083.0
 theme_override_font_sizes/font_size = 30
-current_tab = 1
+current_tab = 2
 tabs_visible = false
 
-[node name="info" type="ScrollContainer" parent="Control/TabContainer"]
+[node name="info" type="ScrollContainer" parent="Control/tabs_for_option_stats_info"]
 visible = false
 layout_mode = 2
 
-[node name="info" type="VBoxContainer" parent="Control/TabContainer/info"]
+[node name="info" type="VBoxContainer" parent="Control/tabs_for_option_stats_info/info"]
 layout_mode = 2
 
-[node name="Settings" type="Control" parent="Control/TabContainer"]
+[node name="Settings" type="Control" parent="Control/tabs_for_option_stats_info"]
+visible = false
 layout_mode = 2
 
-[node name="mus_volume" type="HScrollBar" parent="Control/TabContainer/Settings"]
+[node name="mus_volume" type="HScrollBar" parent="Control/tabs_for_option_stats_info/Settings"]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 48.0
@@ -119,7 +219,7 @@ offset_bottom = 72.0
 value = 50.0
 rounded = true
 
-[node name="sfx_volume" type="HScrollBar" parent="Control/TabContainer/Settings"]
+[node name="sfx_volume" type="HScrollBar" parent="Control/tabs_for_option_stats_info/Settings"]
 layout_mode = 0
 offset_left = 295.0
 offset_top = 48.0
@@ -128,7 +228,7 @@ offset_bottom = 72.0
 value = 50.0
 rounded = true
 
-[node name="music_volume_label" type="Label" parent="Control/TabContainer/Settings"]
+[node name="music_volume_label" type="Label" parent="Control/tabs_for_option_stats_info/Settings"]
 layout_mode = 0
 offset_left = 34.0
 offset_right = 264.0
@@ -138,7 +238,7 @@ text = "Music Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="sfx_volume_label" type="Label" parent="Control/TabContainer/Settings"]
+[node name="sfx_volume_label" type="Label" parent="Control/tabs_for_option_stats_info/Settings"]
 layout_mode = 0
 offset_left = 298.0
 offset_right = 526.0
@@ -148,7 +248,7 @@ text = "SFX Volume"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="music_percent" type="Label" parent="Control/TabContainer/Settings"]
+[node name="music_percent" type="Label" parent="Control/tabs_for_option_stats_info/Settings"]
 layout_mode = 0
 offset_left = 66.0
 offset_top = 73.0
@@ -159,7 +259,7 @@ text = "50%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="sfx_percent" type="Label" parent="Control/TabContainer/Settings"]
+[node name="sfx_percent" type="Label" parent="Control/tabs_for_option_stats_info/Settings"]
 layout_mode = 0
 offset_left = 334.0
 offset_top = 77.0
@@ -170,12 +270,12 @@ text = "50%"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="short_num_toggle" type="CheckButton" parent="Control/TabContainer/Settings"]
+[node name="short_num_toggle" type="CheckButton" parent="Control/tabs_for_option_stats_info/Settings"]
 layout_mode = 0
-offset_left = 258.0
-offset_top = 129.0
-offset_right = 302.0
-offset_bottom = 153.0
+offset_left = 22.0
+offset_top = 120.0
+offset_right = 184.0
+offset_bottom = 152.0
 scale = Vector2(2, 2)
 focus_mode = 0
 theme_override_font_sizes/font_size = 15
@@ -183,7 +283,7 @@ action_mode = 0
 alignment = 2
 expand_icon = true
 
-[node name="short_num_label" type="Label" parent="Control/TabContainer/Settings"]
+[node name="short_num_label" type="Label" parent="Control/tabs_for_option_stats_info/Settings"]
 layout_mode = 0
 offset_left = 33.0
 offset_top = 128.0
@@ -192,29 +292,119 @@ offset_bottom = 170.0
 theme_override_font_sizes/font_size = 30
 text = "Short Numbers"
 
-[node name="save_data_button" type="Button" parent="Control/TabContainer/Settings"]
+[node name="save_data_button" type="Button" parent="Control/tabs_for_option_stats_info/Settings"]
 layout_mode = 0
-offset_left = 30.0
-offset_top = 214.0
-offset_right = 299.0
-offset_bottom = 272.0
+offset_left = 8.0
+offset_top = 711.0
+offset_right = 277.0
+offset_bottom = 769.0
 theme_override_font_sizes/font_size = 36
 text = "Save Data"
 
-[node name="wipe_data_button" type="Button" parent="Control/TabContainer/Settings"]
+[node name="wipe_data_button" type="Button" parent="Control/tabs_for_option_stats_info/Settings"]
 layout_mode = 0
-offset_left = 30.0
-offset_top = 314.0
-offset_right = 299.0
-offset_bottom = 372.0
+offset_left = 288.0
+offset_top = 711.0
+offset_right = 557.0
+offset_bottom = 769.0
 theme_override_font_sizes/font_size = 36
 text = "Wipe Data"
 
-[node name="stats" type="ScrollContainer" parent="Control/TabContainer"]
-visible = false
+[node name="auto_save_toggle" type="CheckButton" parent="Control/tabs_for_option_stats_info/Settings"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 780.0
+offset_right = 183.0
+offset_bottom = 817.0
+scale = Vector2(2, 2)
+
+[node name="auto_save_text" type="Label" parent="Control/tabs_for_option_stats_info/Settings"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 793.0
+offset_right = 267.0
+offset_bottom = 835.0
+theme_override_font_sizes/font_size = 30
+text = "Auto Save On Exit"
+
+[node name="stats" type="ScrollContainer" parent="Control/tabs_for_option_stats_info"]
 layout_mode = 2
 
-[node name="stats" type="VBoxContainer" parent="Control/TabContainer/stats"]
+[node name="Control" type="Control" parent="Control/tabs_for_option_stats_info/stats"]
+layout_mode = 2
+
+[node name="fish_scales" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
+layout_mode = 0
+offset_right = 277.0
+offset_bottom = 37.0
+
+[node name="fish_scales_all_time" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="fish_scales_it_thes_ascention" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="time_from_start_play" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="time_from_ascension_start" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="fish_scales_per_second_multiplier" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="fish_scaler_per_second_base" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="clicks_on_fish" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="max_cps" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="curren_version" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="upgrades_amount_all_time" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="buildings_amount_all_time" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="upgrades_amount_this_ascension" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="buildings_amount_this_ascension" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="Control/tabs_for_option_stats_info"]
+visible = false
 layout_mode = 2
 
 [node name="optionsB" type="Button" parent="Control"]
@@ -241,21 +431,51 @@ offset_right = 528.0
 offset_bottom = 199.0
 text = "statistic"
 
-[node name="save_icon" type="Sprite2D" parent="Control"]
+[node name="save_icon" type="AnimatedSprite2D" parent="Control"]
 visible = false
-position = Vector2(113, 961)
-texture = ExtResource("3_magtn")
+position = Vector2(133, 950)
+sprite_frames = SubResource("SpriteFrames_yhdb0")
+animation = &"discett_wipe_animation"
 
 [node name="save_icon_timer" type="Timer" parent="Control/save_icon"]
-wait_time = 2.0
+wait_time = 1.2
 one_shot = true
 
+[node name="buildings_choice" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1277.0
+offset_top = 124.0
+offset_right = 1592.0
+offset_bottom = 204.0
+theme_override_font_sizes/font_size = 50
+text = "buildings"
+
+[node name="upgrades_choice" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1605.0
+offset_top = 124.0
+offset_right = 1920.0
+offset_bottom = 204.0
+theme_override_font_sizes/font_size = 50
+text = "upgrades"
+
+[node name="shop_text" type="Label" parent="Control"]
+offset_left = 1280.0
+offset_right = 1918.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 70
+text = "Shop:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Control/fish_click" to="." method="_on_fish_click_pressed"]
-[connection signal="value_changed" from="Control/TabContainer/Settings/mus_volume" to="." method="_on_music_volume_value_changed"]
-[connection signal="value_changed" from="Control/TabContainer/Settings/sfx_volume" to="." method="_on_sfx_volume_value_changed"]
-[connection signal="pressed" from="Control/TabContainer/Settings/save_data_button" to="." method="write_to_save"]
-[connection signal="pressed" from="Control/TabContainer/Settings/wipe_data_button" to="." method="wipe_save"]
+[connection signal="value_changed" from="Control/tabs_for_option_stats_info/Settings/mus_volume" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="Control/tabs_for_option_stats_info/Settings/sfx_volume" to="." method="_on_sfx_volume_value_changed"]
+[connection signal="pressed" from="Control/tabs_for_option_stats_info/Settings/save_data_button" to="." method="write_to_save"]
+[connection signal="pressed" from="Control/tabs_for_option_stats_info/Settings/wipe_data_button" to="." method="wipe_save"]
 [connection signal="pressed" from="Control/optionsB" to="." method="_on_options_b_pressed"]
 [connection signal="pressed" from="Control/infoB" to="." method="_on_info_b_pressed"]
 [connection signal="pressed" from="Control/statsB" to="." method="_on_stats_b_pressed"]
 [connection signal="timeout" from="Control/save_icon/save_icon_timer" to="." method="disable_save_icon"]
+[connection signal="pressed" from="Control/buildings_choice" to="." method="_on_buildings_choice_pressed"]
+[connection signal="pressed" from="Control/upgrades_choice" to="." method="_on_upgrades_choice_pressed"]
