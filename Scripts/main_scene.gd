@@ -32,7 +32,11 @@ func on_pressed(buildingId):
 		buildingsList[buildingId].change_amount(buildingsList[buildingId].get_info().x + 1)
 		money -= building_price
 		update_money()
-	else: print("no money")
+		$sfx_player.stream = load("res://Sounds/positive.wav")
+		$sfx_player.play()
+	else:
+		$sfx_player.stream = load("res://Sounds/negative.wav")
+		$sfx_player.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -43,6 +47,7 @@ func _physics_process(delta):
 	for building in buildingsList:
 		var building_amount = buildingsList[building].get_info().x
 		mps += building_amount * (buildings['buildings'][building]['mps'] * buildingsList[building].properties['mps_multiplier'])
+	$Control/Control2/mps.text = "SPS: {mps}".format({'mps': mps})
 	money += mps / 60
 	update_money()
 
@@ -51,9 +56,11 @@ func _on_fish_click_pressed():
 	for building in buildingsList:
 		click_increase += buildingsList[building].properties['click_increase']
 	money += 1 + click_increase
-	var random_rotation = randi_range(-5, 5)
+	var random_rotation = randf_range(-.2, .2)
 	$Control/fish_click.rotation = 0
 	$Control/fish_click.rotation = random_rotation
+	$sfx_player.stream = load("res://Sounds/click.wav")
+	$sfx_player.play()
 	update_money()
 	
 func update_money():
@@ -82,9 +89,11 @@ func _on_stats_b_pressed():
 
 
 func _on_music_volume_value_changed(value):
+	value = snappedf(value, 0.01) * 100
 	$Control/tabs_for_option_stats_info/Settings/music_percent.text = str(value) + "%"
 
 func _on_sfx_volume_value_changed(value):
+	value = snappedf(value, 0.01) * 100
 	$Control/tabs_for_option_stats_info/Settings/sfx_percent.text = str(value) + "%"
 
 func load_buildings():
@@ -131,6 +140,7 @@ func load_upgrades():
 
 func on_upgrade_pressed(upgradeId):
 	if money >= upgradesList[upgradeId].price:
+		money -= upgradesList[upgradeId].price
 		upgradesList[upgradeId].applied = true
 		match upgradesList[upgradeId]['effects']['action']:
 			"add":
@@ -142,7 +152,11 @@ func on_upgrade_pressed(upgradeId):
 			"set":
 				buildingsList[upgradesList[upgradeId]['effects']['building']]['properties'][upgradesList[upgradeId]['effects']['effect']] = upgradesList[upgradeId]['effects']['value']
 		upgradesList[upgradeId].disabled = true
-	else: print("no money")
+		$sfx_player.stream = load("res://Sounds/positive.wav")
+		$sfx_player.play()
+	else: 
+		$sfx_player.stream = load("res://Sounds/negative.wav")
+		$sfx_player.play()
 
 func load_data():
 	var json = JSON.new()
@@ -161,7 +175,15 @@ func load_save(save):
 
 func load_settings(settings):
 	$Control/tabs_for_option_stats_info/Settings/mus_volume.value = settings['music_volume']
+	if	$Control/tabs_for_option_stats_info/Settings/mus_volume.value == 0:
+		$music_player.volume_db = -80
+	else:
+		$music_player.volume_db = linear_to_db(settings['music_volume'])
 	$Control/tabs_for_option_stats_info/Settings/sfx_volume.value = settings['sfx_volume']
+	if	$Control/tabs_for_option_stats_info/Settings/sfx_volume.value == 0:
+		$sfx_player.volume_db = -80
+	else:
+		$sfx_player.volume_db = linear_to_db(settings['music_volume'])
 	$Control/tabs_for_option_stats_info/Settings/short_num_toggle.button_pressed = settings['short_numbers']
 	$Control/tabs_for_option_stats_info/Settings/auto_save_toggle.button_pressed = settings['save_on_exit']
 	return settings
@@ -175,7 +197,9 @@ func save_data():
 
 func save_settings():
 	options['music_volume'] = $Control/tabs_for_option_stats_info/Settings/mus_volume.value
+	$music_player.volume_db = linear_to_db($Control/tabs_for_option_stats_info/Settings/mus_volume.value)
 	options['sfx_volume'] = $Control/tabs_for_option_stats_info/Settings/sfx_volume.value
+	$sfx_player.volume_db = linear_to_db($Control/tabs_for_option_stats_info/Settings/sfx_volume.value)
 	options['short_numbers'] = $Control/tabs_for_option_stats_info/Settings/short_num_toggle.button_pressed
 	options['save_on_exit'] = $Control/tabs_for_option_stats_info/Settings/auto_save_toggle.button_pressed
 
@@ -225,7 +249,7 @@ func _notification(what):
 		get_tree().quit()
 
 func process_stats():
-	$Control/tabs_for_option_stats_info/stats/Control/fish_scales.text = "Current amount of Scales: [b]{money}[/b]".format({'money': money})
+	$Control/tabs_for_option_stats_info/stats/Control/fish_scales.text = "Current amount of Scales: [b]{money}[/b]".format({'money': snappedf(money, 1)})
 
 func _on_buildings_choice_pressed():
 	$Control/tabs_for_buildings_upgrades.set_current_tab(0)

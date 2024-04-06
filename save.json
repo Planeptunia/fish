@@ -13,14 +13,15 @@
 			"temple": 0
 		},
 		"money": 0,
+		"total_money": 0,
 		"upgrades": {
 			"1_tier_mech_arm": false
 		}
 	},
 	"settings": {
-		"music_volume": 38,
+		"music_volume": 0.5,
 		"save_on_exit": false,
-		"sfx_volume": 76,
+		"sfx_volume": 0.5,
 		"short_numbers": true
 	}
 }
