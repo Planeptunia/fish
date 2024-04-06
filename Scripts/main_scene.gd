@@ -6,6 +6,10 @@ var buildingButton = preload("res://Scenes/building_button.tscn")
 var buildings
 var buildingsList = {}
 
+var upgrades
+var upgradesList = {}
+var upgradeButton = preload("res://Scenes/upgrade_button.tscn")
+
 var options
 var savedata
 
@@ -105,6 +109,22 @@ func load_buildings():
 		buildingsList[building].clicked.connect(on_pressed)
 		$Control/scroll_container/Control.add_child(newbuilding)
 	$Control/scroll_container/Control.custom_minimum_size = Vector2(635, (buildingsList.size() * 110) + 110)
+
+func load_upgrades():
+	var json = JSON.new()
+
+	upgrades = FileAccess.open("res://upgrades.json", FileAccess.READ)
+	upgrades = upgrades.get_as_text()
+	upgrades = json.parse_string(upgrades)
+	for upgrade in upgrades['upgrades'].keys():
+		var newupgrade = upgradeButton.instantiate()
+		upgradesList[upgrade] = newupgrade
+		upgradesList[upgrade].id = upgrade
+		
+
+		upgradesList[upgrade].clicked.connect(on_pressed)
+		$Control/tabs_for_buildings_upgrades/grid_upgrades.add_child(newupgrade)
+
 
 func load_data():
 	var json = JSON.new()

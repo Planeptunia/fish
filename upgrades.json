@@ -1,12 +1,15 @@
 {
 	"upgrades":{
 		"1_tier_mech_arm":{
-			"name":
-			"icon":
-			"description":
-			#Что делает, на усмотрение можно сделать пресет эффектов например множитель для чего то и тому подобное, и уже в этих пресетах что то менять
-			"effect"
-			"muptiplier":
+			"name": "a",
+			"icon": "res://Sprites/Sprite-0001.png",
+			"description": "f",
+			"effects":{
+				"building":"mech_arm",
+				"effect":"mps_multiplier",
+				"action":"multiply",
+				"value":2
+			}
 		}
 	}
 }
