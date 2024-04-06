@@ -19,6 +19,7 @@ func _init():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	load_buildings()
+	load_upgrades()
 	savedata = load_data()
 	options = load_settings(savedata['settings'])
 	load_save(savedata['savedata'])
@@ -35,20 +36,20 @@ func on_pressed(buildingId):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	process_stats()
 	
 func _physics_process(delta):
 	var mps = 0
 	for building in buildingsList:
 		var building_amount = buildingsList[building].get_info().x
-		mps += (building_amount * buildings['buildings'][building]['mps']) * buildingsList[building].mps_multiplier
+		mps += building_amount * (buildings['buildings'][building]['mps'] * buildingsList[building].properties['mps_multiplier'])
 	money += mps / 60
 	update_money()
 
 func _on_fish_click_pressed():
 	var click_increase = 0
 	for building in buildingsList:
-		click_increase += buildingsList[building].click_increase
+		click_increase += buildingsList[building].properties['click_increase']
 	money += 1 + click_increase
 	var random_rotation = randi_range(-5, 5)
 	$Control/fish_click.rotation = 0
@@ -71,20 +72,20 @@ func update_money():
 	else: $Control/Control2/money.text = str(snappedf(money, 1))
 
 func _on_options_b_pressed():
-	$Control/TabContainer.set_current_tab(1)
+	$Control/tabs_for_option_stats_info.set_current_tab(1)
 
 func _on_info_b_pressed():
-	$Control/TabContainer.set_current_tab(0)
+	$Control/tabs_for_option_stats_info.set_current_tab(0)
 	
 func _on_stats_b_pressed():
-	$Control/TabContainer.set_current_tab(2)
+	$Control/tabs_for_option_stats_info.set_current_tab(2)
 
 
 func _on_music_volume_value_changed(value):
-	$Control/TabContainer/Settings/music_percent.text = str(value) + "%"
+	$Control/tabs_for_option_stats_info/Settings/music_percent.text = str(value) + "%"
 
 func _on_sfx_volume_value_changed(value):
-	$Control/TabContainer/Settings/sfx_percent.text = str(value) + "%"
+	$Control/tabs_for_option_stats_info/Settings/sfx_percent.text = str(value) + "%"
 
 func load_buildings():
 	var json = JSON.new()
@@ -97,18 +98,18 @@ func load_buildings():
 		buildingsList[building] = newbuilding
 		buildingsList[building].id = building
 		if 'price_multiplier' in buildings['buildings'][building].keys():
-			buildingsList[building].price_multiplier = buildings['buildings'][building]['price_multiplier']
+			buildingsList[building].properties['price_multiplier'] = buildings['buildings'][building]['price_multiplier']
 		if 'mps_multiplier' in buildings['buildings'][building].keys():
-			buildingsList[building].mps_multiplier = buildings['buildings'][building]['mps_multiplier']
+			buildingsList[building].properties['mps_multiplier'] = buildings['buildings'][building]['mps_multiplier']
 		if 'click_increase' in buildings['buildings'][building].keys():
-			buildingsList[building].click_increase = buildings['buildings'][building]['click_increase']
-		buildingsList[building].baseCost = buildings['buildings'][building]['price']
+			buildingsList[building].properties['click_increase'] = buildings['buildings'][building]['click_increase']
+		buildingsList[building].properties['baseCost'] = buildings['buildings'][building]['price']
 		buildingsList[building].change_icon(buildings['buildings'][building]['icon'])
 		buildingsList[building].change_price(buildings['buildings'][building]['price'])
 		buildingsList[building].change_name(buildings['buildings'][building]['name'])
 		buildingsList[building].clicked.connect(on_pressed)
-		$Control/scroll_container/Control.add_child(newbuilding)
-	$Control/scroll_container/Control.custom_minimum_size = Vector2(635, (buildingsList.size() * 110) + 110)
+		$Control/tabs_for_buildings_upgrades/scroll_container/Control.add_child(newbuilding)
+	$Control/tabs_for_buildings_upgrades/scroll_container/Control.custom_minimum_size = Vector2(635, (buildingsList.size() * 110) + 110)
 
 func load_upgrades():
 	var json = JSON.new()
@@ -120,11 +121,28 @@ func load_upgrades():
 		var newupgrade = upgradeButton.instantiate()
 		upgradesList[upgrade] = newupgrade
 		upgradesList[upgrade].id = upgrade
-		
+		upgradesList[upgrade].price = upgrades['upgrades'][upgrade]['price']
+		for effect in upgrades['upgrades'][upgrade]['effects'].keys():
+			upgradesList[upgrade]['effects'][effect] = upgrades['upgrades'][upgrade]['effects'][effect]
+		upgradesList[upgrade].change_name(upgrades['upgrades'][upgrade]['name'])
 
-		upgradesList[upgrade].clicked.connect(on_pressed)
+		upgradesList[upgrade].clicked.connect(on_upgrade_pressed)
 		$Control/tabs_for_buildings_upgrades/grid_upgrades.add_child(newupgrade)
 
+func on_upgrade_pressed(upgradeId):
+	if money >= upgradesList[upgradeId].price:
+		upgradesList[upgradeId].applied = true
+		match upgradesList[upgradeId]['effects']['action']:
+			"add":
+				buildingsList[upgradesList[upgradeId]['effects']['building']]['properties'][upgradesList[upgradeId]['effects']['effect']] += upgradesList[upgradeId]['effects']['value']
+			"remove":
+				buildingsList[upgradesList[upgradeId]['effects']['building']]['properties'][upgradesList[upgradeId]['effects']['effect']] -= upgradesList[upgradeId]['effects']['value']
+			"multiply":
+				buildingsList[upgradesList[upgradeId]['effects']['building']]['properties'][upgradesList[upgradeId]['effects']['effect']] *= upgradesList[upgradeId]['effects']['value']
+			"set":
+				buildingsList[upgradesList[upgradeId]['effects']['building']]['properties'][upgradesList[upgradeId]['effects']['effect']] = upgradesList[upgradeId]['effects']['value']
+		upgradesList[upgradeId].disabled = true
+	else: print("no money")
 
 func load_data():
 	var json = JSON.new()
@@ -138,24 +156,28 @@ func load_save(save):
 	money = save['money']
 	for building in save['buildings'].keys():
 		buildingsList[building].change_amount(save['buildings'][building])
+	for upgrade in save['upgrades'].keys():
+		upgradesList[upgrade].applied = save['upgrades'][upgrade]
 
 func load_settings(settings):
-	$Control/TabContainer/Settings/mus_volume.value = settings['music_volume']
-	$Control/TabContainer/Settings/sfx_volume.value = settings['sfx_volume']
-	$Control/TabContainer/Settings/short_num_toggle.button_pressed = settings['short_numbers']
-	$Control/TabContainer/Settings/auto_save_toggle.button_pressed = settings['save_on_exit']
+	$Control/tabs_for_option_stats_info/Settings/mus_volume.value = settings['music_volume']
+	$Control/tabs_for_option_stats_info/Settings/sfx_volume.value = settings['sfx_volume']
+	$Control/tabs_for_option_stats_info/Settings/short_num_toggle.button_pressed = settings['short_numbers']
+	$Control/tabs_for_option_stats_info/Settings/auto_save_toggle.button_pressed = settings['save_on_exit']
 	return settings
 
 func save_data():
 	savedata['savedata']['money'] = money
 	for building in buildingsList.keys():
 		savedata['savedata']['buildings'][building] = buildingsList[building].amount
+	for upgrade in upgradesList.keys():
+		savedata['savedata']['upgrades'][upgrade] = upgradesList[upgrade].applied
 
 func save_settings():
-	options['music_volume'] = $Control/TabContainer/Settings/mus_volume.value
-	options['sfx_volume'] = $Control/TabContainer/Settings/sfx_volume.value
-	options['short_numbers'] = $Control/TabContainer/Settings/short_num_toggle.button_pressed
-	options['save_on_exit'] = $Control/TabContainer/Settings/auto_save_toggle.button_pressed
+	options['music_volume'] = $Control/tabs_for_option_stats_info/Settings/mus_volume.value
+	options['sfx_volume'] = $Control/tabs_for_option_stats_info/Settings/sfx_volume.value
+	options['short_numbers'] = $Control/tabs_for_option_stats_info/Settings/short_num_toggle.button_pressed
+	options['save_on_exit'] = $Control/tabs_for_option_stats_info/Settings/auto_save_toggle.button_pressed
 
 func write_to_save():
 	save_data()
@@ -174,7 +196,19 @@ func wipe_save():
 	money = 0
 	for building in buildingsList.keys():
 		buildingsList[building].change_amount(0)
-		buildingsList[building].change_price(buildingsList[building].baseCost)
+		buildingsList[building].change_price(buildingsList[building].properties['baseCost'])
+		if 'price_multiplier' in buildings['buildings'][building].keys():
+			buildingsList[building].properties['price_multiplier'] = buildings['buildings'][building]['price_multiplier']
+		else: buildingsList[building].properties['price_multiplier'] = 1.13
+		if 'mps_multiplier' in buildings['buildings'][building].keys():
+			buildingsList[building].properties['mps_multiplier'] = buildings['buildings'][building]['mps_multiplier']
+		else: buildingsList[building].properties['mps_multiplier'] = 1
+		if 'click_increase' in buildings['buildings'][building].keys():
+			buildingsList[building].properties['click_increase'] = buildings['buildings'][building]['click_increase']
+		else: buildingsList[building].properties['click_increase'] = 0
+	for upgrade in upgradesList.keys():
+		upgradesList[upgrade].applied = false
+		upgradesList[upgrade].disabled = false
 	$Control/save_icon.play('discett_wipe_animation')
 	write_to_save()
 	await $Control/save_icon/save_icon_timer.timeout
@@ -190,10 +224,12 @@ func _notification(what):
 			await $Control/save_icon/save_icon_timer.timeout
 		get_tree().quit()
 
+func process_stats():
+	$Control/tabs_for_option_stats_info/stats/Control/fish_scales.text = "Current amount of Scales: [b]{money}[/b]".format({'money': money})
 
 func _on_buildings_choice_pressed():
-	$Control/tabs_for_buildings_upgrades.set_current_tub(0)
+	$Control/tabs_for_buildings_upgrades.set_current_tab(0)
 
 
 func _on_upgrades_choice_pressed():
-	$Control/tabs_for_buildings_upgrades.set_current_tub(1)
+	$Control/tabs_for_buildings_upgrades.set_current_tab(1)

@@ -189,6 +189,7 @@ layout_mode = 2
 [node name="grid_upgrades" type="GridContainer" parent="Control/tabs_for_buildings_upgrades"]
 visible = false
 layout_mode = 2
+columns = 2
 
 [node name="tabs_for_option_stats_info" type="TabContainer" parent="Control"]
 layout_mode = 0
@@ -337,6 +338,7 @@ layout_mode = 2
 layout_mode = 0
 offset_right = 277.0
 offset_bottom = 37.0
+bbcode_enabled = true
 
 [node name="fish_scales_all_time" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
 layout_mode = 0

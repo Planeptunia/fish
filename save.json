@@ -7,16 +7,19 @@
 			"laboratory": 0,
 			"lake": 0,
 			"mage_tower": 0,
-			"mech_arm": 4,
+			"mech_arm": 0,
 			"parts_of_the_sea": 0,
 			"rocket": 0,
 			"temple": 0
 		},
-		"money": 9.67833333333393
+		"money": 0,
+		"upgrades": {
+			"1_tier_mech_arm": false
+		}
 	},
 	"settings": {
 		"music_volume": 38,
-		"save_on_exit": true,
+		"save_on_exit": false,
 		"sfx_volume": 76,
 		"short_numbers": true
 	}

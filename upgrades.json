@@ -1,14 +1,15 @@
 {
-	"upgrades":{
-		"1_tier_mech_arm":{
+	"upgrades": {
+		"1_tier_mech_arm": {
 			"name": "a",
 			"icon": "res://Sprites/Sprite-0001.png",
 			"description": "f",
-			"effects":{
-				"building":"mech_arm",
-				"effect":"mps_multiplier",
-				"action":"multiply",
-				"value":2
+			"price": 100,
+			"effects": {
+				"building": "mech_arm",
+				"effect": "mps_multiplier",
+				"action": "multiply",
+				"value": 2
 			}
 		}
 	}

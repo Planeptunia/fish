@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bw6ul70mh4t8y"]
+[gd_scene load_steps=3 format=3 uid="uid://bw6ul70mh4t8y"]
 
+[ext_resource type="Texture2D" uid="uid://bo1gipftlyn1k" path="res://Sprites/Sprite-0001.png" id="1_3m2ov"]
 [ext_resource type="Script" path="res://Scripts/upgrade_button.gd" id="1_5km5h"]
 
 [node name="upgrade_button" type="Button"]
-offset_right = 8.0
-offset_bottom = 8.0
+custom_minimum_size = Vector2(110, 110)
+offset_right = 110.0
+offset_bottom = 110.0
+icon = ExtResource("1_3m2ov")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("1_5km5h")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
