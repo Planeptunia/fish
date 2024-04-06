@@ -2,21 +2,21 @@
 	"buildings": {
 		"mech_arm": {
 			"name": "Mech Arm",
-			"icon": "res://Sprites/Sprite-0001.png",
+			"icon": "res://Sprites/mech_arm.png",
 			"price": 13,
 			"description": "seledka",
 			"mps": 0.1
 		},
 		"fisherman": {
 			"name": "Fisherman",
-			"icon": "res://Sprites/Sprite-0001.png",
+			"icon": "res://Sprites/fisherman.png",
 			"price": 100,
 			"description": "seledka",
 			"mps": 1
 		},
 		"lake": {
 			"name": "Lake",
-			"icon": "res://Sprites/Sprite-0001.png",
+			"icon": "res://Sprites/lake.png",
 			"price": 1010,
 			"description": "seledka",
 			"mps": 6
