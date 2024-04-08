@@ -15,13 +15,27 @@
 		"money": 0,
 		"total_money": 0,
 		"upgrades": {
-			"1_tier_mech_arm": false
+			"10_tier_mech_arm": false,
+			"11_tier_mech_arm": false,
+			"12_tier_mech_arm": false,
+			"13_tier_mech_arm": false,
+			"14_tier_mech_arm": false,
+			"15_tier_mech_arm": false,
+			"1_tier_mech_arm": false,
+			"2_tier_mech_arm": false,
+			"3_tier_mech_arm": false,
+			"4_tier_mech_arm": false,
+			"5_tier_mech_arm": false,
+			"6_tier_mech_arm": false,
+			"7_tier_mech_arm": false,
+			"8_tier_mech_arm": false,
+			"9_tier_mech_arm": false
 		}
 	},
 	"settings": {
 		"music_volume": 0.5,
 		"save_on_exit": false,
-		"sfx_volume": 0.5,
+		"sfx_volume": 0.188888888888889,
 		"short_numbers": true
 	}
 }

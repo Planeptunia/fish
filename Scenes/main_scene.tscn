@@ -201,7 +201,7 @@ layout_mode = 2
 [node name="grid_upgrades" type="GridContainer" parent="Control/tabs_for_buildings_upgrades"]
 visible = false
 layout_mode = 2
-columns = 2
+columns = 5
 
 [node name="tabs_for_option_stats_info" type="TabContainer" parent="Control"]
 layout_mode = 0

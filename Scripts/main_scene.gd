@@ -67,11 +67,11 @@ func update_money():
 	var sign
 	if options["short_numbers"]:
 		var shown_money = money
-		if (money / 1000) < 1000 and (money / 1000) > 1:
+		if (money / 1000) < 1000 and (money / 1000) >= 1:
 			sign = "k"
 			shown_money = money / 1000
 			$Control/Control2/money.text = str(snappedf(shown_money, 0.01)) + " " + sign
-		elif (money / 1000000) < 1000 and (money / 1000000) > 1:
+		elif (money / 1000000) < 1000 and (money / 1000000) >= 1:
 			sign = "m"
 			shown_money = money / 1000000
 			$Control/Control2/money.text = str(snappedf(shown_money, 0.01)) + " " + sign
@@ -151,6 +151,12 @@ func on_upgrade_pressed(upgradeId):
 				buildingsList[upgradesList[upgradeId]['effects']['building']]['properties'][upgradesList[upgradeId]['effects']['effect']] *= upgradesList[upgradeId]['effects']['value']
 			"set":
 				buildingsList[upgradesList[upgradeId]['effects']['building']]['properties'][upgradesList[upgradeId]['effects']['effect']] = upgradesList[upgradeId]['effects']['value']
+			"thousand_wires":
+				var amount_b = 0
+				for building in buildingsList:
+					amount_b += buildingsList[building].get_info().x
+				buildingsList[upgradesList[upgradeId]['effects']['building']]['properties'][upgradesList[upgradeId]['effects']['effect']] += (upgradesList[upgradeId]['effects']['value'] * amount_b)
+				
 		upgradesList[upgradeId].disabled = true
 		$sfx_player.stream = load("res://Sounds/positive.wav")
 		$sfx_player.play()

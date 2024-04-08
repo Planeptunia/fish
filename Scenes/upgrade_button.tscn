@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/upgrade_button.gd" id="1_5km5h"]
 
 [node name="upgrade_button" type="Button"]
-custom_minimum_size = Vector2(110, 110)
+custom_minimum_size = Vector2(125, 125)
 offset_right = 110.0
 offset_bottom = 110.0
 icon = ExtResource("1_3m2ov")

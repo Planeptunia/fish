@@ -1,7 +1,175 @@
 {
 	"upgrades": {
 		"1_tier_mech_arm": {
-			"name": "a",
+			"name": "f",
+			"icon": "res://Sprites/Sprite-0001.png",
+			"description": "f",
+			"price": 100,
+			"effects": {
+				"building": "mech_arm",
+				"effect": "mps_multiplier",
+				"action": "multiply",
+				"value": 2,
+			}
+			},
+		"2_tier_mech_arm": {
+			"name": "f",
+			"icon": "res://Sprites/Sprite-0001.png",
+			"description": "f",
+			"price": 500,
+			"effects": {
+				"building": "mech_arm",
+				"effect": "mps_multiplier",
+				"action": "multiply",
+				"value": 2,
+			}
+			},
+		"3_tier_mech_arm": {
+			"name": "f",
+			"icon": "res://Sprites/Sprite-0001.png",
+			"description": "f",
+			"price": 10000,
+			"effects": {
+				"building": "mech_arm",
+				"effect": "mps_multiplier",
+				"action": "multiply",
+				"value": 2,
+			}
+			},
+		"4_tier_mech_arm": {
+			"name": "f",
+			"icon": "res://Sprites/Sprite-0001.png",
+			"description": "f",
+			"price": 100000,
+			"effects": {
+				"building": "mech_arm",
+				"effect": "mps_multiplier",
+				"action": "multiply",
+				"value": 2,
+			}
+			},
+		"5_tier_mech_arm": {
+			"name": "f",
+			"icon": "res://Sprites/Sprite-0001.png",
+			"description": "f",
+			"price": 10000000,
+			"effects": {
+				"building": "mech_arm",
+				"effect": "mps",
+				"action": "thousand_wire",
+				"value": 0.1,
+			}
+			},
+		"6_tier_mech_arm": {
+			"name": "f",
+			"icon": "res://Sprites/Sprite-0001.png",
+			"description": "f",
+			"price": 100,
+			"effects": {
+				"building": "mech_arm",
+				"effect": "mps_multiplier",
+				"action": "multiply",
+				"value": 2,
+			}
+			},
+		"7_tier_mech_arm": {
+			"name": "f",
+			"icon": "res://Sprites/Sprite-0001.png",
+			"description": "f",
+			"price": 100,
+			"effects": {
+				"building": "mech_arm",
+				"effect": "mps_multiplier",
+				"action": "multiply",
+				"value": 2,
+			}
+			},
+		"8_tier_mech_arm": {
+			"name": "f",
+			"icon": "res://Sprites/Sprite-0001.png",
+			"description": "f",
+			"price": 100,
+			"effects": {
+				"building": "mech_arm",
+				"effect": "mps_multiplier",
+				"action": "multiply",
+				"value": 2,
+			}
+			},
+		"9_tier_mech_arm": {
+			"name": "f",
+			"icon": "res://Sprites/Sprite-0001.png",
+			"description": "f",
+			"price": 100,
+			"effects": {
+				"building": "mech_arm",
+				"effect": "mps_multiplier",
+				"action": "multiply",
+				"value": 2,
+			}
+			},
+		"10_tier_mech_arm": {
+			"name": "f",
+			"icon": "res://Sprites/Sprite-0001.png",
+			"description": "f",
+			"price": 100,
+			"effects": {
+				"building": "mech_arm",
+				"effect": "mps_multiplier",
+				"action": "multiply",
+				"value": 2,
+			}
+			},
+		"11_tier_mech_arm": {
+			"name": "f",
+			"icon": "res://Sprites/Sprite-0001.png",
+			"description": "f",
+			"price": 100,
+			"effects": {
+				"building": "mech_arm",
+				"effect": "mps_multiplier",
+				"action": "multiply",
+				"value": 2,
+			}
+			},
+		"12_tier_mech_arm": {
+			"name": "f",
+			"icon": "res://Sprites/Sprite-0001.png",
+			"description": "f",
+			"price": 100,
+			"effects": {
+				"building": "mech_arm",
+				"effect": "mps_multiplier",
+				"action": "multiply",
+				"value": 2,
+			}
+			},
+		"13_tier_mech_arm": {
+			"name": "f",
+			"icon": "res://Sprites/Sprite-0001.png",
+			"description": "f",
+			"price": 100,
+			"effects": {
+				"building": "mech_arm",
+				"effect": "mps_multiplier",
+				"action": "multiply",
+				"value": 2,
+			}
+			},
+		"14_tier_mech_arm": {
+			"name": "f",
+			"icon": "res://Sprites/Sprite-0001.png",
+			"description": "f",
+			"price": 100,
+			"effects": {
+				"building": "mech_arm",
+				"effect": "mps_multiplier",
+				"action": "multiply",
+				"value": 2,
+			}
+			},
+		"15_tier_mech_arm": {
+			"name": "f",
 			"icon": "res://Sprites/Sprite-0001.png",
 			"description": "f",
 			"price": 100,
@@ -11,6 +179,6 @@
 				"action": "multiply",
 				"value": 2
 			}
-		}
+			}
 	}
 }
