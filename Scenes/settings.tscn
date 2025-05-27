@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://df1dbu0a5ngst"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 565.0
+offset_bottom = 1021.0
+metadata/_tab_index = 1
+
+[node name="mus_volume" type="HScrollBar" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 141.0
+offset_right = 269.0
+offset_bottom = 165.0
+max_value = 1.0
+value = 1.0
+
+[node name="sfx_volume" type="HScrollBar" parent="."]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 141.0
+offset_right = 530.0
+offset_bottom = 165.0
+max_value = 1.0
+value = 1.0
+
+[node name="music_volume_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 93.0
+offset_right = 266.0
+offset_bottom = 135.0
+theme_override_font_sizes/font_size = 30
+text = "Music Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="music_percent" type="Label" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 166.0
+offset_right = 241.0
+offset_bottom = 213.0
+theme_override_font_sizes/font_size = 30
+text = "50%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sfx_volume_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 93.0
+offset_right = 528.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 30
+text = "SFX Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sfx_percent" type="Label" parent="."]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 170.0
+offset_right = 497.0
+offset_bottom = 212.0
+theme_override_font_sizes/font_size = 30
+text = "50%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="short_num_toggle" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 213.0
+offset_right = 186.0
+offset_bottom = 245.0
+scale = Vector2(2, 2)
+focus_mode = 0
+theme_override_font_sizes/font_size = 15
+action_mode = 0
+alignment = 2
+expand_icon = true
+
+[node name="short_num_label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 221.0
+offset_right = 258.0
+offset_bottom = 263.0
+theme_override_font_sizes/font_size = 30
+text = "Short Numbers"
+
+[node name="save_data_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 886.0
+offset_right = 278.0
+offset_bottom = 944.0
+theme_override_font_sizes/font_size = 36
+text = "Save Data"
+
+[node name="wipe_data_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 886.0
+offset_right = 558.0
+offset_bottom = 944.0
+theme_override_font_sizes/font_size = 36
+text = "Wipe Data"
+
+[node name="auto_save_toggle" type="CheckButton" parent="."]
+layout_mode = 0
+offset_top = 955.0
+offset_right = 184.0
+offset_bottom = 992.0
+scale = Vector2(2, 2)
+
+[node name="auto_save_text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 968.0
+offset_right = 268.0
+offset_bottom = 1010.0
+theme_override_font_sizes/font_size = 30
+text = "Auto Save On Exit"
+
+[node name="Settings" type="Label" parent="."]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 13.0
+offset_right = 522.0
+offset_bottom = 89.0
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+horizontal_alignment = 1

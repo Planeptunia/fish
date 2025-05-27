@@ -1,10 +1,13 @@
-[gd_scene load_steps=25 format=3 uid="uid://cihk1myiwivd"]
+[gd_scene load_steps=28 format=3 uid="uid://cihk1myiwivd"]
 
-[ext_resource type="Script" path="res://Scripts/main_scene.gd" id="1_550oq"]
+[ext_resource type="Script" uid="uid://m45730kmnwqk" path="res://Scripts/main_scene.gd" id="1_550oq"]
 [ext_resource type="Texture2D" uid="uid://bo1gipftlyn1k" path="res://Sprites/Sprite-0001.png" id="2_askvq"]
+[ext_resource type="PackedScene" uid="uid://b46aj0x4hxsbs" path="res://Scenes/information.tscn" id="3_5bov3"]
 [ext_resource type="Texture2D" uid="uid://by72in0b417ic" path="res://Sprites/Sprite-discett.png" id="3_bg7hr"]
 [ext_resource type="Texture2D" uid="uid://bnbalthj2v8r4" path="res://Sprites/animations/Sprite-discett-animatioc2.png" id="4_6eci5"]
+[ext_resource type="PackedScene" uid="uid://bwxtmfml4hhc6" path="res://Scenes/statistics.tscn" id="4_xle81"]
 [ext_resource type="Texture2D" uid="uid://bhi2slkgedd6j" path="res://Sprites/animations/Sprite-discett-animatioc3.png" id="5_cy0cn"]
+[ext_resource type="PackedScene" uid="uid://df1dbu0a5ngst" path="res://Scenes/settings.tscn" id="5_s8qe6"]
 [ext_resource type="Texture2D" uid="uid://7ep1w7us4ro5" path="res://Sprites/animations/Sprite-discett-animatioc4.png" id="6_bv1qq"]
 [ext_resource type="Texture2D" uid="uid://e5h3ldja73fl" path="res://Sprites/animations/Sprite-discett-animatioc5.png" id="7_65wan"]
 [ext_resource type="Texture2D" uid="uid://b0ftkom4jsybr" path="res://Sprites/animations/Sprite-discett-animatioc6.png" id="8_c1a7b"]
@@ -119,10 +122,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -234.5
-offset_top = -190.0
-offset_right = 234.5
-offset_bottom = 190.0
+offset_left = -268.5
+offset_top = -202.0
+offset_right = 200.5
+offset_bottom = 178.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(234.5, 190)
@@ -157,10 +160,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -12.0
-offset_top = -48.0
-offset_right = 483.0
-offset_bottom = 89.0
+offset_left = -44.0
+offset_top = -40.0
+offset_right = 451.0
+offset_bottom = 97.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 100
@@ -184,266 +187,47 @@ offset_left = 1275.0
 offset_top = 228.0
 offset_right = 1918.0
 offset_bottom = 1078.0
-tabs_visible = false
+current_tab = 0
 
-[node name="scroll_container" type="ScrollContainer" parent="Control/tabs_for_buildings_upgrades"]
-clip_contents = false
+[node name="Buildings" type="ScrollContainer" parent="Control/tabs_for_buildings_upgrades"]
+clip_children = 1
 layout_mode = 2
 scroll_vertical_custom_step = 10.0
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
 metadata/_edit_use_anchors_ = true
+metadata/_tab_index = 0
 
-[node name="Control" type="VBoxContainer" parent="Control/tabs_for_buildings_upgrades/scroll_container"]
+[node name="Control" type="VBoxContainer" parent="Control/tabs_for_buildings_upgrades/Buildings"]
 custom_minimum_size = Vector2(635, 0)
 layout_mode = 2
 
-[node name="grid_upgrades" type="GridContainer" parent="Control/tabs_for_buildings_upgrades"]
+[node name="Upgrades" type="GridContainer" parent="Control/tabs_for_buildings_upgrades"]
 visible = false
 layout_mode = 2
 columns = 5
+metadata/_tab_index = 1
 
 [node name="tabs_for_option_stats_info" type="TabContainer" parent="Control"]
 layout_mode = 0
-offset_top = 218.0
+offset_top = -2.0
 offset_right = 565.0
-offset_bottom = 1083.0
+offset_bottom = 1077.0
 theme_override_font_sizes/font_size = 30
-current_tab = 2
-tabs_visible = false
+current_tab = 0
 
-[node name="info" type="ScrollContainer" parent="Control/tabs_for_option_stats_info"]
+[node name="information" parent="Control/tabs_for_option_stats_info" instance=ExtResource("3_5bov3")]
+layout_mode = 2
+
+[node name="statistics" parent="Control/tabs_for_option_stats_info" instance=ExtResource("4_xle81")]
 visible = false
 layout_mode = 2
+metadata/_tab_index = 1
 
-[node name="info" type="VBoxContainer" parent="Control/tabs_for_option_stats_info/info"]
-layout_mode = 2
-
-[node name="Settings" type="Control" parent="Control/tabs_for_option_stats_info"]
+[node name="Settings" parent="Control/tabs_for_option_stats_info" instance=ExtResource("5_s8qe6")]
 visible = false
 layout_mode = 2
-
-[node name="mus_volume" type="HScrollBar" parent="Control/tabs_for_option_stats_info/Settings"]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 48.0
-offset_right = 267.0
-offset_bottom = 72.0
-max_value = 1.0
-value = 1.0
-
-[node name="sfx_volume" type="HScrollBar" parent="Control/tabs_for_option_stats_info/Settings"]
-layout_mode = 0
-offset_left = 295.0
-offset_top = 48.0
-offset_right = 528.0
-offset_bottom = 72.0
-max_value = 1.0
-value = 1.0
-
-[node name="music_volume_label" type="Label" parent="Control/tabs_for_option_stats_info/Settings"]
-layout_mode = 0
-offset_left = 34.0
-offset_right = 264.0
-offset_bottom = 42.0
-theme_override_font_sizes/font_size = 30
-text = "Music Volume"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="music_percent" type="Label" parent="Control/tabs_for_option_stats_info/Settings"]
-layout_mode = 0
-offset_left = 66.0
-offset_top = 73.0
-offset_right = 239.0
-offset_bottom = 120.0
-theme_override_font_sizes/font_size = 30
-text = "50%"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="sfx_volume_label" type="Label" parent="Control/tabs_for_option_stats_info/Settings"]
-layout_mode = 0
-offset_left = 298.0
-offset_right = 526.0
-offset_bottom = 43.0
-theme_override_font_sizes/font_size = 30
-text = "SFX Volume"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="sfx_percent" type="Label" parent="Control/tabs_for_option_stats_info/Settings"]
-layout_mode = 0
-offset_left = 334.0
-offset_top = 77.0
-offset_right = 495.0
-offset_bottom = 119.0
-theme_override_font_sizes/font_size = 30
-text = "50%"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="short_num_toggle" type="CheckButton" parent="Control/tabs_for_option_stats_info/Settings"]
-layout_mode = 0
-offset_left = 22.0
-offset_top = 120.0
-offset_right = 184.0
-offset_bottom = 152.0
-scale = Vector2(2, 2)
-focus_mode = 0
-theme_override_font_sizes/font_size = 15
-action_mode = 0
-alignment = 2
-expand_icon = true
-
-[node name="short_num_label" type="Label" parent="Control/tabs_for_option_stats_info/Settings"]
-layout_mode = 0
-offset_left = 33.0
-offset_top = 128.0
-offset_right = 256.0
-offset_bottom = 170.0
-theme_override_font_sizes/font_size = 30
-text = "Short Numbers"
-
-[node name="save_data_button" type="Button" parent="Control/tabs_for_option_stats_info/Settings"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 711.0
-offset_right = 277.0
-offset_bottom = 769.0
-theme_override_font_sizes/font_size = 36
-text = "Save Data"
-
-[node name="wipe_data_button" type="Button" parent="Control/tabs_for_option_stats_info/Settings"]
-layout_mode = 0
-offset_left = 288.0
-offset_top = 711.0
-offset_right = 557.0
-offset_bottom = 769.0
-theme_override_font_sizes/font_size = 36
-text = "Wipe Data"
-
-[node name="auto_save_toggle" type="CheckButton" parent="Control/tabs_for_option_stats_info/Settings"]
-layout_mode = 0
-offset_left = -1.0
-offset_top = 780.0
-offset_right = 183.0
-offset_bottom = 817.0
-scale = Vector2(2, 2)
-
-[node name="auto_save_text" type="Label" parent="Control/tabs_for_option_stats_info/Settings"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 793.0
-offset_right = 267.0
-offset_bottom = 835.0
-theme_override_font_sizes/font_size = 30
-text = "Auto Save On Exit"
-
-[node name="stats" type="ScrollContainer" parent="Control/tabs_for_option_stats_info"]
-layout_mode = 2
-
-[node name="Control" type="Control" parent="Control/tabs_for_option_stats_info/stats"]
-layout_mode = 2
-
-[node name="fish_scales" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
-layout_mode = 0
-offset_right = 277.0
-offset_bottom = 37.0
-bbcode_enabled = true
-
-[node name="fish_scales_all_time" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="fish_scales_it_thes_ascention" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="time_from_start_play" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="time_from_ascension_start" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="fish_scales_per_second_multiplier" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="fish_scaler_per_second_base" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="clicks_on_fish" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="max_cps" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="curren_version" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="upgrades_amount_all_time" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="buildings_amount_all_time" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="upgrades_amount_this_ascension" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="buildings_amount_this_ascension" type="RichTextLabel" parent="Control/tabs_for_option_stats_info/stats/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="GridContainer" type="GridContainer" parent="Control/tabs_for_option_stats_info"]
-visible = false
-layout_mode = 2
-
-[node name="optionsB" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 23.0
-offset_right = 527.0
-offset_bottom = 96.0
-text = "options"
-
-[node name="infoB" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 29.0
-offset_top = 128.0
-offset_right = 267.0
-offset_bottom = 197.0
-text = "info"
-
-[node name="statsB" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 291.0
-offset_top = 128.0
-offset_right = 528.0
-offset_bottom = 199.0
-text = "statistic"
+metadata/_tab_index = 2
 
 [node name="save_icon" type="AnimatedSprite2D" parent="Control"]
 visible = false
@@ -488,13 +272,6 @@ vertical_alignment = 1
 [node name="sfx_player" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="Control/fish_click" to="." method="_on_fish_click_pressed"]
-[connection signal="value_changed" from="Control/tabs_for_option_stats_info/Settings/mus_volume" to="." method="_on_music_volume_value_changed"]
-[connection signal="value_changed" from="Control/tabs_for_option_stats_info/Settings/sfx_volume" to="." method="_on_sfx_volume_value_changed"]
-[connection signal="pressed" from="Control/tabs_for_option_stats_info/Settings/save_data_button" to="." method="write_to_save"]
-[connection signal="pressed" from="Control/tabs_for_option_stats_info/Settings/wipe_data_button" to="." method="wipe_save"]
-[connection signal="pressed" from="Control/optionsB" to="." method="_on_options_b_pressed"]
-[connection signal="pressed" from="Control/infoB" to="." method="_on_info_b_pressed"]
-[connection signal="pressed" from="Control/statsB" to="." method="_on_stats_b_pressed"]
 [connection signal="timeout" from="Control/save_icon/save_icon_timer" to="." method="disable_save_icon"]
 [connection signal="pressed" from="Control/buildings_choice" to="." method="_on_buildings_choice_pressed"]
 [connection signal="pressed" from="Control/upgrades_choice" to="." method="_on_upgrades_choice_pressed"]

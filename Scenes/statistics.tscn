@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bwxtmfml4hhc6"]
+
+[node name="statistics" type="ScrollContainer"]
+offset_right = 565.0
+offset_bottom = 1021.0
+metadata/_tab_index = 2
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(565, 1021)
+layout_mode = 2
+
+[node name="stats" type="VBoxContainer" parent="Control"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+offset_left = 1.0
+offset_top = 94.0
+offset_right = 566.0
+offset_bottom = 364.0
+
+[node name="fish_scales" type="RichTextLabel" parent="Control/stats"]
+layout_mode = 2
+bbcode_enabled = true
+text = "f"
+
+[node name="fish_scales_all_time" type="RichTextLabel" parent="Control/stats"]
+layout_mode = 2
+text = "f"
+
+[node name="fish_scales__this_ascention" type="RichTextLabel" parent="Control/stats"]
+layout_mode = 2
+
+[node name="time_from_start_play" type="RichTextLabel" parent="Control/stats"]
+layout_mode = 2
+
+[node name="time_from_ascension_start" type="RichTextLabel" parent="Control/stats"]
+layout_mode = 2
+
+[node name="fish_scales_per_second_multiplier" type="RichTextLabel" parent="Control/stats"]
+layout_mode = 2
+
+[node name="fish_scaler_per_second_base" type="RichTextLabel" parent="Control/stats"]
+layout_mode = 2
+
+[node name="clicks_on_fish" type="RichTextLabel" parent="Control/stats"]
+layout_mode = 2
+
+[node name="max_cps" type="RichTextLabel" parent="Control/stats"]
+layout_mode = 2
+
+[node name="upgrades_amount_all_time" type="RichTextLabel" parent="Control/stats"]
+layout_mode = 2
+
+[node name="buildings_amount_all_time" type="RichTextLabel" parent="Control/stats"]
+layout_mode = 2
+
+[node name="upgrades_amount_this_ascension" type="RichTextLabel" parent="Control/stats"]
+layout_mode = 2
+
+[node name="buildings_amount_this_ascension" type="RichTextLabel" parent="Control/stats"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 564.0
+offset_bottom = 95.0
+theme_override_font_sizes/font_size = 50
+text = "Statistics"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 422.0
+offset_right = 564.0
+offset_bottom = 1027.0

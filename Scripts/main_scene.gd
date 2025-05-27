@@ -99,7 +99,7 @@ func _on_sfx_volume_value_changed(value):
 func load_buildings():
 	var json = JSON.new()
 
-	buildings = FileAccess.open("res://buildings.json", FileAccess.READ)
+	buildings = FileAccess.open("res://saves/buildings.json", FileAccess.READ)
 	buildings = buildings.get_as_text()
 	buildings = json.parse_string(buildings)
 	for building in buildings['buildings'].keys():
@@ -117,13 +117,13 @@ func load_buildings():
 		buildingsList[building].change_price(buildings['buildings'][building]['price'])
 		buildingsList[building].change_name(buildings['buildings'][building]['name'])
 		buildingsList[building].clicked.connect(on_pressed)
-		$Control/tabs_for_buildings_upgrades/scroll_container/Control.add_child(newbuilding)
-	$Control/tabs_for_buildings_upgrades/scroll_container/Control.custom_minimum_size = Vector2(635, (buildingsList.size() * 110) + 110)
+		$Control/tabs_for_buildings_upgrades/Buildings/Control.add_child(newbuilding)
+	$Control/tabs_for_buildings_upgrades/Buildings/Control.custom_minimum_size = Vector2(635, (buildingsList.size() * 110) + 110)
 
 func load_upgrades():
 	var json = JSON.new()
 
-	upgrades = FileAccess.open("res://upgrades.json", FileAccess.READ)
+	upgrades = FileAccess.open("res://saves/upgrades.json", FileAccess.READ)
 	upgrades = upgrades.get_as_text()
 	upgrades = json.parse_string(upgrades)
 	for upgrade in upgrades['upgrades'].keys():
@@ -136,7 +136,7 @@ func load_upgrades():
 		upgradesList[upgrade].change_name(upgrades['upgrades'][upgrade]['name'])
 
 		upgradesList[upgrade].clicked.connect(on_upgrade_pressed)
-		$Control/tabs_for_buildings_upgrades/grid_upgrades.add_child(newupgrade)
+		$Control/tabs_for_buildings_upgrades/Upgrades.add_child(newupgrade)
 
 func on_upgrade_pressed(upgradeId):
 	if money >= upgradesList[upgradeId].price:
@@ -167,7 +167,7 @@ func on_upgrade_pressed(upgradeId):
 func load_data():
 	var json = JSON.new()
 	
-	var data = FileAccess.open("res://save.json", FileAccess.READ)
+	var data = FileAccess.open("res://saves/save.json", FileAccess.READ)
 	data = data.get_as_text()
 	data = json.parse_string(data)
 	return data
@@ -215,7 +215,7 @@ func write_to_save():
 	savedata['settings'] = options
 	var json = JSON.new()
 	var data = json.stringify(savedata, "\t")
-	var file = FileAccess.open("res://save.json", FileAccess.WRITE)
+	var file = FileAccess.open("res://saves/save.json", FileAccess.WRITE)
 	file.store_line(data)
 	file.close()
 	$Control/save_icon.position = get_viewport().get_mouse_position()
@@ -255,7 +255,7 @@ func _notification(what):
 		get_tree().quit()
 
 func process_stats():
-	$Control/tabs_for_option_stats_info/stats/Control/fish_scales.text = "Current amount of Scales: [b]{money}[/b]".format({'money': snappedf(money, 1)})
+	$Control/tabs_for_option_stats_info/statistics/Control/stats/fish_scales.text = "Current amount of Scales: [b]{money}[/b]".format({'money': snappedf(money, 1)})
 
 func _on_buildings_choice_pressed():
 	$Control/tabs_for_buildings_upgrades.set_current_tab(0)

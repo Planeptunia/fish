@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b46aj0x4hxsbs"]
+
+[node name="information" type="ScrollContainer"]
+offset_right = 565.0
+offset_bottom = 1021.0
+metadata/_tab_index = 0
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(565, 1081)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 565.0
+offset_bottom = 97.0
+theme_override_font_sizes/font_size = 50
+text = "information"
+horizontal_alignment = 1

@@ -2,70 +2,70 @@
 	"buildings": {
 		"mech_arm": {
 			"name": "Mech Arm",
-			"icon": "res://Sprites/mech_arm.png",
+			"icon": "res://Sprites/buildings/mech_arm.png",
 			"price": 13,
 			"description": "seledka",
 			"mps": 0.1
 		},
 		"fisherman": {
 			"name": "Fisherman",
-			"icon": "res://Sprites/fisherman.png",
+			"icon": "res://Sprites/buildings/fisherman.png",
 			"price": 100,
 			"description": "seledka",
 			"mps": 1
 		},
 		"lake": {
 			"name": "Lake",
-			"icon": "res://Sprites/lake.png",
+			"icon": "res://Sprites/buildings/lake.png",
 			"price": 1010,
 			"description": "seledka",
 			"mps": 6
 		},
 		"fish_sellers": {
 			"name": "Fish Seller",
-			"icon": "res://Sprites/Sprite-0001.png",
+			"icon": "res://Sprites/buildings/Sprite-0001.png",
 			"price": 10500,
 			"description": "seledka",
 			"mps": 42
 		},
 		"parts_of_the_sea": {
 			"name": "Part Of The Sea",
-			"icon": "res://Sprites/Sprite-0001.png",
+			"icon": "res://Sprites/buildings/Sprite-0001.png",
 			"price": 110500,
 			"description": "seledka",
 			"mps": 220
 		},
 		"bank": {
 			"name": "Bank",
-			"icon": "res://Sprites/Sprite-0001.png",
+			"icon": "res://Sprites/buildings/Sprite-0001.png",
 			"price": 1200200,
 			"description": "seledka",
 			"mps": 1100
 		},
 		"temple": {
 			"name": "Temple",
-			"icon": "res://Sprites/Sprite-0001.png",
+			"icon": "res://Sprites/buildings/Sprite-0001.png",
 			"price": 19005000,
 			"description": "seledka",
 			"mps": 7300
 		},
 		"laboratory": {
 			"name": "Laboratory",
-			"icon": "res://Sprites/Sprite-0001.png",
+			"icon": "res://Sprites/buildings/Sprite-0001.png",
 			"price": 310000000,
 			"description": "seledka",
 			"mps": 40000
 		},
 		"rocket": {
 			"name": "Rocket",
-			"icon": "res://Sprites/Sprite-0001.png",
+			"icon": "res://Sprites/buildings/Sprite-0001.png",
 			"price": 5000000000,
 			"description": "seledka",
 			"mps": 230000
 		},
 		"mage_tower": {
 			"name": "Mage Tower",
-			"icon": "res://Sprites/Sprite-0001.png",
+			"icon": "res://Sprites/buildings/Sprite-0001.png",
 			"price": 70000000000,
 			"description": "seledka",
 			"mps": 1400000

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bv55un5stal1t"]
 
-[ext_resource type="Script" path="res://Scripts/building_button.gd" id="1_jnm2d"]
+[ext_resource type="Script" uid="uid://cekxxyb88c0gf" path="res://Scripts/building_button.gd" id="1_jnm2d"]
 [ext_resource type="Texture2D" uid="uid://bo1gipftlyn1k" path="res://Sprites/Sprite-0001.png" id="2_k2pst"]
 
 [node name="building_button" type="Button"]

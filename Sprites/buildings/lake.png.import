@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buvueh6xuwsik"
-path="res://.godot/imported/fisherman.png-5a0359e47062a3dc8dee66324281346b.ctex"
+uid="uid://bs685lhchate0"
+path="res://.godot/imported/lake.png-82000dee0aca4ff4ae09390369b524f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/fisherman.png"
-dest_files=["res://.godot/imported/fisherman.png-5a0359e47062a3dc8dee66324281346b.ctex"]
+source_file="res://Sprites/buildings/lake.png"
+dest_files=["res://.godot/imported/lake.png-82000dee0aca4ff4ae09390369b524f5.ctex"]
 
 [params]
 
